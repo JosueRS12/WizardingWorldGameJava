@@ -1,7 +1,7 @@
 package observer;
 
 
-public abstract class Snooper {
-    public abstract void performAction();
+public interface Snooper {
+    public abstract void performAction(Attractive a);
  
 }

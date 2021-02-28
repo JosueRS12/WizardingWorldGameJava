@@ -1,16 +1,32 @@
 package observer;
 
-public class Enemy {
+import gameComponent.GameComponent;
+import java.awt.Graphics;
+import java.awt.image.BufferedImage;
+import math.Vector2D;
+
+public class Enemy extends GameComponent implements Snooper {
     private int health;
     private String typeSpell;
     private int rangeAttack;
 
-    public Enemy(int health, String typeSpell, int rangeAttack) {
+    public Enemy(BufferedImage texture, Vector2D position, int health, String typeSpell, int rangeAttack) {
+        super(texture, position);
         this.health = health;
         this.typeSpell = typeSpell;
         this.rangeAttack = rangeAttack;
     }
+    
+     @Override
+    public void update() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 
+    @Override
+    public void draw(Graphics g) {
+        g.drawImage(texture, (int)position.getX(), (int)position.getY(), null);
+    }
+    
     public int getHealth() {
         return health;
     }
@@ -38,6 +54,15 @@ public class Enemy {
     /*
     get and set position
     */
+
+    @Override
+    public void performAction(Attractive a) {
+        //change position y attack.
+    }
+
+   
+
+
     
     
     

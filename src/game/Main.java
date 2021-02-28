@@ -4,7 +4,10 @@ import graphic.Window;
 
 public class Main {
     public static void main(String[] args){
-        Window.getWindow().setVisible(true);
+        Window w = Window.getWindow();        
+        w.start();
+        
+        
        
     }
 }

@@ -1,22 +1,11 @@
 package observer;
 
-import java.util.ArrayList;
-
-public class Attractive {
-    private ArrayList<Snooper> observer = new ArrayList<>();  
+public interface Attractive {
+     
+    public abstract void addSnooper(Snooper snp);
     
-    public void addSnooper(Snooper snp){
-        observer.add(snp);
-    }
+    public abstract void deleteSnooper(Snooper snp);
     
-    public void deleteSnooper(Snooper snp){
-        observer.add(snp);
-    }
-    
-    public void notify(){
-        for(Snooper sn: observer){
-            sn.performAction(this);
-        }
-    }
+    public abstract void alert();
 
 }

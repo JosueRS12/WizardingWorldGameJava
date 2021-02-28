@@ -1,9 +1,12 @@
 package prototype;
 
+import java.awt.image.BufferedImage;
+import math.Vector2D;
+
 public class Health extends Potion{
     
-    public Health(String typePotion, String effect) {
-        super(typePotion, effect);
+    public Health(BufferedImage texture, Vector2D position, String typePotion) {
+        super(texture, position, typePotion);
     }
     
     /*

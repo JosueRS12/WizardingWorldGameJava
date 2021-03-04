@@ -5,7 +5,7 @@ import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 import math.Vector2D;
 
-public class Key extends GameComponent implements Snooper{
+public class Key extends GameComponent{
     boolean state;
 
     public Key(BufferedImage texture, Vector2D position, boolean state) {
@@ -31,15 +31,7 @@ public class Key extends GameComponent implements Snooper{
         this.state = state;
     }
     
-    /*
-    get and set position
-    */
-
-    @Override
-    public void performAction(Attractive a) {
-        this.state = false;
-        //terminar...
-    }
+ 
 
     
 

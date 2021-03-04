@@ -8,7 +8,7 @@ public class Crucio extends Spell{
 
     @Override
     public void effect() {
-        //...
+        
     }
     
 }

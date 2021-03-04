@@ -6,20 +6,22 @@ import java.awt.event.KeyListener;
 public class KeyControl implements KeyListener{
 
     private boolean[] key = new boolean[256];
-    public static boolean UP, LEFT, RIGHT, DOWN;
+    public static boolean UP, LEFT, RIGHT, DOWN, SHOOT;
     
     public KeyControl(){
         UP = false;
         LEFT = false;
         RIGHT = false;
         DOWN = false;
+        SHOOT = false;
     }
     
     public void update(){
         UP = key[KeyEvent.VK_UP];
         DOWN = key[KeyEvent.VK_DOWN];
         RIGHT = key[KeyEvent.VK_RIGHT];
-        LEFT = key[KeyEvent.VK_LEFT];                
+        LEFT = key[KeyEvent.VK_LEFT];       
+        SHOOT = key[KeyEvent.VK_SPACE];
     }
     
 

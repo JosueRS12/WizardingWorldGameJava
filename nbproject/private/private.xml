@@ -3,9 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/home/josue/NetBeansProjects/wizardingWorld/src/observer/Player.java</file>
+            <file>file:/home/josue/NetBeansProjects/wizardingWorld/src/observer/Attractive.java</file>
             <file>file:/home/josue/NetBeansProjects/wizardingWorld/src/state/GameState.java</file>
             <file>file:/home/josue/NetBeansProjects/wizardingWorld/src/graphic/Window.java</file>
-            <file>file:/home/josue/NetBeansProjects/wizardingWorld/src/game/Main.java</file>
+            <file>file:/home/josue/NetBeansProjects/wizardingWorld/src/observer/Enemy.java</file>
+            <file>file:/home/josue/NetBeansProjects/wizardingWorld/src/observer/Snooper.java</file>
+            <file>file:/home/josue/NetBeansProjects/wizardingWorld/src/observer/Key.java</file>
         </group>
     </open-files>
 </project-private>

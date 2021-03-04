@@ -1,25 +1,63 @@
 package observer;
 
+import Bridge.Patronus;
+import Bridge.Spell;
 import gameComponent.GameComponent;
+import gameComponent.Laser;
+import gameComponent.MovingObject;
+import graphic.Assets;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
+import java.util.Random;
 import math.Vector2D;
+import state.GameState;
 
-public class Enemy extends GameComponent implements Snooper {
+public class Enemy extends MovingObject implements Snooper {
     private int health;
-    private String typeSpell;
+    private String spell;
     private int rangeAttack;
+    private GameState gameState;
+    private Random r = new Random();
 
-    public Enemy(BufferedImage texture, Vector2D position, int health, String typeSpell, int rangeAttack) {
-        super(texture, position);
+
+    public Enemy(BufferedImage texture, Vector2D position, Vector2D velocity, int health, String spell, int rangeAttack, GameState gameState) {        
+        super(texture, position, velocity);
         this.health = health;
-        this.typeSpell = typeSpell;
+        this.spell = spell;
         this.rangeAttack = rangeAttack;
+        this.gameState = gameState;
     }
+    
+    
+    
     
      @Override
     public void update() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        //bichos persiguien al player       
+        if(spell.equals("patronus")){
+            gameState.getMvo().add(new Laser(
+                    Assets.blue,
+                    position,
+                    position,
+                    0                                
+            ));
+        }
+        if(spell.equals("crucio")){
+            gameState.getMvo().add(new Laser(
+                    Assets.green,
+                    position,
+                    position,
+                    0                                
+            ));
+        }
+        if(spell.equals("wingardium")){
+            gameState.getMvo().add(new Laser(
+                    Assets.red,
+                    position,
+                    position,
+                    0                                
+            ));
+        }
     }
 
     @Override
@@ -36,11 +74,11 @@ public class Enemy extends GameComponent implements Snooper {
     }
 
     public String getTypeSpell() {
-        return typeSpell;
+        return spell;
     }
 
     public void setTypeSpell(String typeSpell) {
-        this.typeSpell = typeSpell;
+        this.spell = typeSpell;
     }
 
     public int getRangeAttack() {
@@ -56,8 +94,9 @@ public class Enemy extends GameComponent implements Snooper {
     */
 
     @Override
-    public void performAction(Attractive a) {
-        //change position y attack.
+    public void performAction() {
+        position.setX(r.nextInt(751));
+        position.setY(r.nextInt(562));        
     }
 
    

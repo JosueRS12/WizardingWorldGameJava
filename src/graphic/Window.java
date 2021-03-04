@@ -77,14 +77,23 @@ public class Window extends JFrame implements Runnable{
         }        
         g = bs.getDrawGraphics();        
         //
+        if(gameState.state()==false){
+            g.setColor(Color.BLACK);
+
+            g.fillRect(0, 0, WIDTH, HEIGHT);
+
+            try{
+                gameState.draw(g);
+            }
+            catch(CloneNotSupportedException e){
+                e.getMessage();
+            }        
+        }
+        else{
+            g.setColor(Color.blue);
+        }
         
         
-        g.setColor(Color.BLACK);
-        
-        g.fillRect(0, 0, WIDTH, HEIGHT);
-        
-        
-        gameState.draw(g);
         
         
         //g.drawString(""+AVERAGEFPS, 100, 100);
